@@ -1,4 +1,13 @@
-Algoritmo Distribuci髇Camarones
+1. Desarrollar lo que se le indica a continuaci贸n.
+Una empresa productora de camarones distribuye sus productos hacia diferentes almacenes sucursales. Disponen de un muelle de carga a donde van saliendo paquetes con camarones de 7000 y 9000 Kgs. La empresa dispone de una flota de camiones con capacidades de carga de entre 28000 y 34000 Kg.
+Se pretende establecer un protocolo consistente en cargar 5 camiones diarios. Cada cami贸n se quiere cargar como m谩ximo a su l铆mite de capacidad debiendo partirsi con el siguiente paquete en la l铆nea de producci贸n se fuera a exceder su capacidad. Controlar el peso de carga y el n煤mero de camiones con la implementaci贸n de arreglos.
+La empresa necesita desarrollar un programa que le pida al operario: la capacidad del cami贸n y el peso de cada uno de los paquetes que se incluir谩n en el cami贸n los paquetes, indic谩ndole si debe cargar el paquete siguiente o despachar el cami贸n para comenzar a cargar otro cami贸n.
+Implementar una funci贸n para Al final del programa deber谩 imprimir la carga con la que se despach贸 cada cami贸n y la cantidad de paquetes que lleva cada cami贸n, finalmente indicar la cantidad de kg. que se despacharon en total.
+
+
+
+
+Algoritmo Distribuci贸nCamarones
 	
 	Definir n, m, i, j como Enteros
 	Definir capacidadCamion como Entero
@@ -9,12 +18,12 @@ Algoritmo Distribuci髇Camarones
 	Dimension  cargas[5] 
 	
 	//Escribir "Ingrese el numero de camiones a cargar"
-	//Leer n  // n鷐ero de camiones a cargar
+	//Leer n  // n煤mero de camiones a cargar
 	Para n = 1 hasta 5 hacer 
 	Escribir "Ingrese la capacidad Maxima de cada camion " n 
-	Leer capacidadCamion  // capacidad de carga de cada cami髇
+	Leer capacidadCamion  // capacidad de carga de cada cami贸n
 	Escribir "Ingrese el numero de paquetes disponibles"
-	Leer m  // n鷐ero de paquetes disponibles
+	Leer m  // n煤mero de paquetes disponibles
 	//paquetes[m] <- pesoPaquete
 	Para i = 1 hasta m hacer
 		Escribir "Ingrese el peso del paquete en Kg" 
@@ -28,22 +37,22 @@ Algoritmo Distribuci髇Camarones
 		paquetes[i] <- pesoPaquete
 	FinPara
 	n <- n 
-	cargas[n] <- 0 // arreglo para almacenar la carga de cada cami髇
-	j <- 1  // 韓dice del paquete actual
+	cargas[n] <- 0 // arreglo para almacenar la carga de cada cami贸n
+	j <- 1  // 铆ndice del paquete actual
 	Para i = 1 hasta n hacer
-		cargaCamion <- 0  // iniciar la carga del cami髇 en 0
+		cargaCamion <- 0  // iniciar la carga del cami贸n en 0
 		Mientras j <= m Y cargaCamion + paquetes[j] <= capacidadCamion hacer
-			cargaCamion <- cargaCamion + paquetes[j]  // sumar el peso del paquete al cami髇
+			cargaCamion <- cargaCamion + paquetes[j]  // sumar el peso del paquete al cami贸n
 			j <- j + 1  // pasar al siguiente paquete
 		FinMientras
-		cargas[i] <- cargaCamion  // almacenar la carga del cami髇 en el arreglo
-		totalCargaDespachada <- totalCargaDespachada + cargaCamion // sumar la carga del cami髇 a la carga total
+		cargas[i] <- cargaCamion  // almacenar la carga del cami贸n en el arreglo
+		totalCargaDespachada <- totalCargaDespachada + cargaCamion // sumar la carga del cami贸n a la carga total
 	FinPara
 FinPara
 	totalCargaDespachada <- 0
 	Para i = 1 hasta n hacer
 		totalCargaDespachada <- totalCargaDespachada + cargas[i]  // sumar la carga despachada
-		Escribir "Cami髇", i, " cargado con ", cargas[i], " Kgs"
+		Escribir "Cami贸n", i, " cargado con ", cargas[i], " Kgs"
 	FinPara
 	
 	Escribir "Total de carga despachada:", totalCargaDespachada, "Kgs"
